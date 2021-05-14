@@ -22,9 +22,7 @@ int ArgMin(vector< pair< int, int >> M)
 {
     int l = 0;
     for(int i = 0; i < M.size() ; ++i){
-	    if ( M[i].first < M[l].first ){
-		    l = i;
-	    }
+	    if ( M[i].first < M[l].first) l = i;
     }
     return l;
 }
@@ -78,16 +76,12 @@ vector<int> kWayMerge(const vector<vector<int>> & Aj)
 {
 	int I[Aj.size()];
 	int n = 0;
-	for( int k = 0; k < Aj.size(); ++k){
-		n += Aj[k].size();
-	}
+	for( int k = 0; k < Aj.size(); ++k) n += Aj[k].size();
 	vector<int> A(n, 0);
 	for ( int i = 0 ; i < n ; ++i){
 		vector<pair<int, int>> M;
 		for( int y = 0; y < Aj.size(); y++){
-			if( I[y] != Aj[y].size()){
-				M.push_back(make_pair(Aj[y][I[y]], y));
-			}
+			if( I[y] != Aj[y].size()) M.push_back(make_pair(Aj[y][I[y]], y));
 		}
 		int l = ArgMin(M);
 		int j = M[l].second;
@@ -114,15 +108,13 @@ void kWayMergeSort(vector<int> & A, int k, int& total_num_calls)
 
 int main()
 {
-	int n = 10000;
 	int k;
 	int q;
 	vector<int> A;
 
 	cin >> k;
 	// read array A from standard input
-	while (cin >> q)
-		A.push_back(q);
+	while (cin >> q) A.push_back(q);
 	auto start = get_time::now(); //use auto keyword to minimize typing strokes :)
 
 	int total_num_calls = 0;
