@@ -1,6 +1,6 @@
 # mergeSort
 
-mergeSort.cpp and mergeSort.py are the classic algorithm
+mergeSort.cpp and mergeSort.py are the classic algorithm </br>
 kWayMergeSort.cpp merges k subarrays
 
 Input: Space deliminated list of integers
